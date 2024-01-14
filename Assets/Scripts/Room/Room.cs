@@ -47,6 +47,11 @@ public class Room : MonoBehaviourPunCallbacks
         }
     }
 
+    [PunRPC]
+    private void Next() {
+        SceneManager.LoadScene("GameScene");
+    }
+
     public void SendMessage() {
         if(msg.text.Length > 0){
             string text = string.Format("{0} > {1}", PhotonNetwork.LocalPlayer.NickName, msg.text);
@@ -58,6 +63,14 @@ public class Room : MonoBehaviourPunCallbacks
     public void Back2Menu() {
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("TitleScene");
+    }
+
+    public void Go2Game() {
+        if(PhotonNetwork.PlayerList.Length == 2){
+            photonView.RPC("Next", RpcTarget.All);
+        }else{
+            addLog("Not enough players.");
+        }
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer) {
