@@ -41,6 +41,13 @@ MonoBehaviour:
   - RespawnSpaceship
   - addLog
   - Next
+  - changeID
+  - changeFace
+  - Flip
+  - chageFace
+  - deletePlayer
+  - changeChara
+  - deleteChara
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 0
