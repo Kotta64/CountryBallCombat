@@ -23,12 +23,6 @@ public class CharaSelector : MonoBehaviourPunCallbacks
         charaImg = GameObject.Find("player" + playerId.ToString() + "img").GetComponent<Image>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     [PunRPC]
     private void changeID(int d) {
         charaId+=d;

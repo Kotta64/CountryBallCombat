@@ -14,8 +14,6 @@ public class PlayerController : MonoBehaviourPunCallbacks
     private Rigidbody2D rb;
     private SpriteRenderer renderer;
     private bool isJumping;
-    [SerializeField]
-    private Sprite[] Images;
     private Animator anim;
 
     // Start is called before the first frame update
@@ -23,7 +21,7 @@ public class PlayerController : MonoBehaviourPunCallbacks
     {
         rb = GetComponent<Rigidbody2D>();
         renderer = GetComponent<SpriteRenderer>();
-        isJumping = false;
+        isJumping = true;
     }
 
     // Update is called once per frame
